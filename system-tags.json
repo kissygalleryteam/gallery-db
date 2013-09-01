@@ -1,4 +1,3 @@
 {
-    "isv":"kcharts,calendar,limiter",
-    "form":"uploader,auth,formValidation,calendar,linkage,numberSpinner,butterfly,radio,select,checkcode,checkbox,spinbox,cityselector,placeholder,validation,colorPicker,limiter"
+    "isv":"kcharts,calendar,limiter"
 }
