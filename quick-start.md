@@ -116,6 +116,8 @@ grunt
 
 第五步：修改`./slide/`中的源码（比如`./slide/1.2/index.js`），打开使用了slide的页面，可开始调试
 
+![](http://gtms01.alicdn.com/tps/i1/T1.ZhxFvXbXXb0CP6.-596-364.png)
+
 ## Step5:补充组件描述、教程、demo
 
 打开abc.json，修改组件信息，比如像下面的内容：
