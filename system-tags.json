@@ -1,6 +1,7 @@
 {
     "常用组件集":"uploader,slide,kcharts,auth,storage,albums,countdown,kds,tip,sws,datalazyload,layer-anim",
     "活动页面":"sws,sideNav,lineParallax,slide,datalazyload,layer-anim,autoResponsive,KOnepageScroll,stepcontrol,responsiveslide,ks-timeline,sticky,yearline,snake-slider,TimeLines,albums,NGuide,limitfixed,scrollFloat,digitalScroll",
+    "mobile":"app,mobile-album,iscroll-lite,contacts,confirm,touchCrop,slideBtn,storage,photoswipe,simple-mask,redirectToNative,bidi,",	
     "isv":"kcharts,calendar,limiter,uploader,autoResponsive",
     "组件大赛精选":"storage,imageFilter,albums,musicPlayer,snake-slider,Mock,frameCartoon",
     "butterfly form":"uploader,auth,select,limiter,placeholder,radio,checkbox,spinbox,textMagnifier,checkcode,linkage,Slider,pwdstrength,offline",
