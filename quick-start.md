@@ -1,13 +1,12 @@
 # 十五分钟开发一个kissy组件
 
-发布和同步系统：[http://kpm.f2e.taobao.net/](KPM)(阿里内网才能访问)
+发布和同步系统：[http://kpm.f2e.taobao.net/](KPM)(阿里内网才能访问)，[changelog](https://github.com/kissygalleryteam/kpm/issues/238)
 
 请先加入组件作者旺旺群：`600859238`。
 
-组件review和fork：@伯才
+组件review和fork：@伯才，@剑平，@拔赤
 
-答疑：@伯方、@翰文
-
+答疑：@伯方、@翰文、@明正
 
 > 阿里内网用户：可以自主发布和同步文档，前提是`abc.json`中的邮箱必须使用内网邮箱，不要使用`github`邮箱。
 >
@@ -15,13 +14,11 @@
 
 ## Step0: 在github中创建个组件库
 
-比如，你的组件名称是[Slide](https://github.com/jayli/slide)，创建个库名叫[Slide](https://github.com/jayli/slide)。并Fork至`@kissygalleryteam`（若无权限，联系@翰文）。
-
-![](http://gtms01.alicdn.com/tps/i1/T10QceFnheXXa2RzfA-605-435.png)
+比如，你的组件名称是[Slide](https://github.com/jayli/slide)，创建个库名叫[Slide](https://github.com/jayli/slide)。<del>并Fork至`@kissygalleryteam`（若无权限，联系@翰文）</del>。
 
 然后clone这个库到你本地。
 
-> 库名必须是组件名，fork到官方库后，如果有修改需求，请联系翰文，不然会出现无法发布的问题！
+> 库名必须是组件名。
 
 ## Step1: 安装kissy gallery组件工具
 
@@ -30,7 +27,7 @@ npm install yo grunt-cli -g
 ````
 
 ````sh
-npm install generator-kissy-gallery -g
+npm install generator-kpm -g
 ````
 
 请确保本地带有NodeJs和Npm环境。
@@ -42,7 +39,7 @@ npm install generator-kissy-gallery -g
 打开命令行工具，执行如下命令：
 
 ````sh
-yo kissy-gallery 1.0
+yo kpm 1.0
 ````
 
 `1.0`为组件起始版本目录，可以自由设置。
@@ -50,6 +47,11 @@ yo kissy-gallery 1.0
 工具会询问您组件的作者和email，这是必须输入的：
 
 ![](http://gtms01.alicdn.com/tps/i1/T1uBTvFdJeXXX0p5cq-425-367.png)
+
+其中有两项重要配置：flexComboPort（默认81）和reserveServerPort（默认8080），含义如下：
+
+1. flexComboPort：设置[Grunt-FlexCombo](http://github.com/jayli/grunt-flexcombo)服务的端口
+1. reserveServerPort：设置Grunt-flexcombo中的反向代理的端口。
 
 构建成功后的目录如下：
 
@@ -85,26 +87,31 @@ grunt
 
 > `grunt`默认只打包`index.js`，如果组件有其他需求，请修改[gruntfile.js](https://github.com/jayli/slide/blob/master/Gruntfile.js)的打包配置
 
-打包成功后，会在`build`目录下生成`index.js`和`index-min.js`，同时`css`文件也会被构建。
+打包成功后，会在`build`目录下生成`index.js`和`index-min.js`，同时`css`文件、`less`和`scss`文件也会被构建。
 
-## Step4:组件的调试
+## Step4:组件的开发和调试
+
+组件源码自带一个本地服务，包含代理服务器（[代理服务器原理](https://github.com/jayli/grunt-flexcombo)），让你能够方便调试任意线上（使用你的组件的页面）组件代码。
 
 <strong>源码开发</strong>
 
-本地Demo调试：无需HTTP服务器支持，直接打开`demo/index.html`，带上`?ks-debug`后缀即可调试代码。
+STEP.1 在组件目录中启动服务：`grunt demo`
+
+SETP.2 浏览器（或手机设备）中绑定本地代理（8080端口）
+
+![](http://gtms01.alicdn.com/tps/i1/T1KzNFFrxbXXcrSyrN-372-175.png)
+
+SETP.3 打开浏览器，访问`http://demo/demo/index.html`即可
 
 <strong>线上代码调试</strong>
 
-组件源码自带一个本地服务，包含代理服务器（[代理服务器原理](https://github.com/jayli/grunt-flexcombo)），让你能够方便调试任意线上（使用你的组件的页面）组件代码。比如，我要`debug`一个引用了[slide组件](https://github.com/jayli/slide)的页面
+比如我要`debug`一个引用了[slide组件](https://github.com/jayli/slide)的页面（淘宝首页）
 
-第一步：将组件代码clone在任意目录：`git clone Git地址`
+第一步：将[组件代码](https://github.com/jayli/slide)clone在任意目录：`git clone https://github.com/jayli/slide.git`
 
 第二步：补全`node_modules`：在组件目录`./slide/`内执行`npm install`
 
-第三步：绑定Host & 绑定代理（推荐） 二选一
-
-1. 将cdn配向开发机`127.0.0.1 g.tbcdn.cn a.tbcdn.cn`
-1. 将浏览器或者设备HTTP代理配置到本机的反向代理服务的端口（推荐此方法）
+第三步：给浏览器（或手机设备）绑定代理（本机8080端口）
 
 比如在手机终端（无法设置Host）的环境中，设置代理的方法：
 
@@ -114,7 +121,7 @@ grunt
 
 	grunt debug
 
-第五步：修改`./slide/`中的源码（比如`./slide/1.2/index.js`），打开使用了slide的页面，可开始调试
+第五步：修改`./slide/`中的源码（比如`./slide/1.2/index.js`），打开使用了slide的页面，断点生效
 
 ![](http://gtms01.alicdn.com/tps/i1/T1.ZhxFvXbXXb0CP6.-596-364.png)
 
@@ -127,6 +134,8 @@ grunt
 {
     "name": "slide",
     "version":"1.2",
+	"flexComboPort":"81",
+	"reserveServerPort":"8080",
     "author":{
 		"name":"拔赤",
 		"email":"bachi@taobao.com",
@@ -144,6 +153,8 @@ grunt
 - desc字段为组件描述
 - version字段为最新的组件代码版本
 - author字段为作者信息
+- flexComboPort为flexcombo的服务端口
+- reserveServerPort为反向代理的服务端口
 
 ### 组件使用教程和demo
 
@@ -159,33 +170,13 @@ demo的访问地址示例：[http://gallery.kissyui.com/slide/1.2/demo/index.htm
 
 ## Step6:发布组件
 
-### 第一次发布在[kpm](https://github.com/kissygalleryteam/kpm/issues)下建一个issue
-
-issue的内容可以参考：[editorUploader组件](https://github.com/kissygalleryteam/kpm/issues/26)，正文带上你用户名下的组件库路径。
-
-issue标题统一为:add 组件名称。
-
-新建issue的目的有二个：
-
-* 通知官方库管理员fork你的组件库(审核)
-* 当你的组件发布成功后，系统会反馈发布消息到你建的issue。
-
-
-### 向官方库发送pull request
-
-前提是管理员已经fork你的组件库。
-
-将你的代码提交到自己的github库后，发一个pull request到kissygalleryteam用户名下的库。
+直接登录[http://kpm.f2e.taobao.net/](http://kpm.f2e.taobao.net/)，新增组件，由管理员（剑平、拔赤、韩文）审核
 
 ### 使用kpm发布和同步文档
 
-进入[http://kpm.f2e.taobao.net/](KPM)，如下图：
+进入[http://kpm.f2e.taobao.net/](KPM)，新增组件，或者在老的组件基础上添加github库的前缀，如下图：
 
-![kpm](http://img01.taobaocdn.com/tps/i1/T1xK9lFk8bXXcOe6rm-462-259.png)
-
-如果您没有找到自己的组件，请把邮箱发送给翰文，让他配下权限。
-
-![action](http://img01.taobaocdn.com/tps/i1/T1wsKlFbtbXXarLv7e-420-160.png)
+![](http://gtms01.alicdn.com/tps/i1/T1d00_FB4aXXXl2cIw-746-406.png)
 
 点击*"prepub"*会触发如下功能：
 
@@ -204,5 +195,4 @@ issue标题统一为:add 组件名称。
 发布成功后，系统返回的消息类似如下：
 
 ![发布消息](http://img03.taobaocdn.com/tps/i3/T1jc9mXpNiXXbmmmfY-272-368.png)
-
 

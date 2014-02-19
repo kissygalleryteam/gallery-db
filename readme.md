@@ -32,19 +32,19 @@ grunt
 
 ```
 offline           // 组件目录名, 小写, 多字符用 – 分隔
-|          |-----1.0    // 版本名字, 两个数字表示 x.x
-|          |         |---------demo                         // 用于存放demo的文件夹
-|          |         |---------doc                          // 用于存放组件api文档的文件夹
-|          |         |---------plugin                       // 用于存放组件的插件，可以没有
-|          |         |---------build                       // 用于存放组件打包后的文件
-|          |         |---------guide                        // 用于介绍组件入门的文件夹
-|          |         |              |--------index.md       // 用于介绍组件入门的文档
-|          |         |---------spec                        // 单元测试放的目录
-|          |         |---------index.js                     // 组件入口文件
-|          |         |---------index.deps.js                    // 组件combo时使用的配置信息
-|          |-----README.md                                  	// 用于介绍组件信息和版本更新
-|          |-----abc.json                                 // 组件信息（用于首页显示信息）
-|          |-----gruntfile.js                                 // grunt打包时使用的配置信息
+|      |-----1.0    // 版本名字, 两个数字表示 x.x
+|      |     |---------demo                         // 用于存放demo的文件夹
+|      |     |---------doc                          // 用于存放组件api文档的文件夹
+|      |     |---------plugin                       // 用于存放组件的插件，可以没有
+|      |     |---------build                       // 用于存放组件打包后的文件
+|      |     |---------guide                        // 用于介绍组件入门的文件夹
+|      |     |         |--------index.md       // 用于介绍组件入门的文档
+|      |     |---------spec                        // 单元测试放的目录
+|      |     |---------index.js                     // 组件入口文件
+|      |     |---------index.deps.js                    // 组件combo时使用的配置信息
+|      |-----README.md                                  	// 用于介绍组件信息和版本更新
+|      |-----abc.json                                 // 组件信息（用于首页显示信息）
+|      |-----gruntfile.js                                 // grunt打包时使用的配置信息
 ```
 
 ### 规范说明
@@ -77,19 +77,20 @@ page字段指向你的个人主页。
 
 cover字段为组件封面图片
 
-
 ## 组件发布
 
-我们需要把组件发布到淘宝cdn上，方便用户直接引用，kissy1.3配置了<code>gallery</code>包指向，淘宝cdn的地址，这样用户不需要额外配置gallery的包路径。
+我们需要把组件发布到淘宝cdn上，方便用户直接引用，kissy1.4配置了<code>gallery</code>包指向，淘宝cdn的地址，这样用户不需要额外配置gallery的包路径。
 
 ## 组件调试
+
+> 组件代码携带Demo环境和调试环境，[参照这里](http://gallery.kissyui.com/quickstart)
 
 组件初始化脚本demo：
 
 ```javascript
-    KISSY.use('gallery/offline/1.0/index',function (S,Offiline) {
-        var a = new Offiline();
-    });
+KISSY.use('gallery/offline/1.0/index',function (S,Offiline) {
+	var a = new Offiline();
+});
 ```
 
 <code>use()</code>加载的模块命名起始为gallery，缺少这个层级，在本地调试时就会报模块找不到的错误。
@@ -99,19 +100,19 @@ cover字段为组件封面图片
 本地调试，请配置gallery包路径
 
 ```javascript
-    if (KISSY.Config.debug) {
-        KISSY.config({
-          packages:[
-            {
-              name:"gallery",
-              tag:"20111220",
-              path:"../../../",
-              ignorePackageNameInUri:true,
-              charset:"utf-8"
-            }
-          ]
-        });
-    }
+if (KISSY.Config.debug) {
+	KISSY.config({
+	  packages:[
+		{
+		  name:"gallery",
+		  tag:"20111220",
+		  path:"../../../",
+		  ignorePackageNameInUri:true,
+		  charset:"utf-8"
+		}
+	  ]
+	});
+}
 ```
 
 这样就可以使用本地源码文件进行调试了。
@@ -166,7 +167,7 @@ KISSY.use('gallery/uploader/1.4/plugins/imageZoom/imageZoom', function(S, ImageZ
 
 ## 代码规范
 
-* 代码基于kissy1.3，无需兼容kissy1.1.6
+* 代码基于kissy1.4.x，无需兼容kissy1.1.6
 * add()模块时，不要加上模块名称，使用工具自定生成
 * 组件请继承base模块，使用get()和set()方法获取/设置属性
 * 推荐使用Node方式获取节点
