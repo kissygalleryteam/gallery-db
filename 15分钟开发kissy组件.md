@@ -14,11 +14,12 @@
 
 ## Step0: 在github中创建个组件库
 
-比如，你的组件名称是[Slide](https://github.com/jayli/slide)，创建个库名叫[Slide](https://github.com/jayli/slide)。<del>并Fork至`@kissygalleryteam`（若无权限，联系@翰文）</del>。
+比如，你的组件名称是[Slide](https://github.com/jayli/slide)，创建个库名叫[lide](https://github.com/jayli/slide)。<del>并Fork至`@kissygalleryteam`（若无权限，联系@翰文）</del>。
 
 然后clone这个库到你本地。
 
-> 库名必须是组件名。
+> 库名必须是组件名
+> 库名请使用小写，多个单词使用-连接
 
 ## Step1: 安装kissy gallery组件工具
 
@@ -230,61 +231,3 @@ demo的访问地址示例：[http://gallery.kissyui.com/slide/1.2/demo/index.htm
 ## 运行单测
 
 //待补充
-
-## 如何组织组件代码
-
-一个组件模块代码如下
-
-```javascript
-/**
- * @fileoverview 文件用户
- * @author 作者的
- **/
-KISSY.add(function(S, Node, Base) {
-    var EMPTY = '';
-    var $ = Node.all;
-    /**
-     * @name ImageZoom
-     * @class 图片放大器
-     * @since 1.4
-     * @constructor
-     * @extends Base
-     */
-    function ImageZoom(config) {
-        var self = this;
-        //调用父类构造函数
-        ImageZoom.superclass.constructor.call(self, config);
-    }
-    S.extend(ImageZoom, Base, /** @lends ImageZoom.prototype*/{
-
-    }, {ATTRS : /** @lends ImageZoom*/{
-
-    }});
-    return ImageZoom;
-}, {requires : ['node','base']});
-/**
- * changes:
- * 明河：1.4
- *           - XXXX
- */
-```
-
-use时
-
-```
-KISSY.use('gallery/uploader/1.4/plugins/imageZoom/imageZoom', function(S, ImageZoom) {
-   new ImageZoom();
-});
-```
-
-### 代码规范
-
-* 代码基于kissy1.4.x，无需兼容kissy1.1.6
-* add()模块时，不要加上模块名称，使用工具自定生成
-* 组件请继承base模块，使用get()和set()方法获取/设置属性
-* 推荐使用Node方式获取节点
-* 不在模块内动态<code>use()</code>js和css
-* 复杂组件请继承RichBase
-* 组件注释符合YUIDoc规范
-* js中需要模版的请使用xtemplate模块
-* 请不要直接向KISSY全局变量注入属性或方法
