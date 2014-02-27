@@ -14,11 +14,12 @@
 
 ## Step0: 在github中创建个组件库
 
-比如，你的组件名称是[Slide](https://github.com/jayli/slide)，创建个库名叫[Slide](https://github.com/jayli/slide)。<del>并Fork至`@kissygalleryteam`（若无权限，联系@翰文）</del>。
+比如，你的组件名称是[Slide](https://github.com/jayli/slide)，创建个库名叫[lide](https://github.com/jayli/slide)。<del>并Fork至`@kissygalleryteam`（若无权限，联系@翰文）</del>。
 
 然后clone这个库到你本地。
 
-> 库名必须是组件名。
+> 库名必须是组件名
+> 库名请使用小写，多个单词使用-连接
 
 ## Step1: 安装kissy gallery组件工具
 
