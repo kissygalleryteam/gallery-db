@@ -1,9 +1,20 @@
 {
-    "常用组件集":"uploader,slide,kcharts,auth,storage,albums,countdown,kds,tip,sws,datalazyload,layer-anim",
-    "活动页面":"sws,sideNav,lineParallax,slide,datalazyload,layer-anim,autoResponsive,KOnepageScroll,stepcontrol,responsiveslide,ks-timeline,sticky,yearline,snake-slider,TimeLines,albums,NGuide,limitfixed,scrollFloat,digitalScroll",
-    "mobile":"app,mobile-album,iscroll-lite,contacts,confirm,touchCrop,slideBtn,storage,photoswipe,simple-mask,redirectToNative,bidi,",	
+    "五星组件推荐":"uploader,slide,kcharts,auth,storage,albums,countdown,kds,tip,sws,datalazyload,layer-anim,imageFilter,musicPlayer,snake-slider,Mock,frameCartoon",
+    "kissy mini":"",
     "isv":"kcharts,calendar,limiter,uploader,autoResponsive",
-    "组件大赛精选":"storage,imageFilter,albums,musicPlayer,snake-slider,Mock,frameCartoon",
-    "butterfly form":"uploader,auth,select,limiter,placeholder,radio,checkbox,spinbox,textMagnifier,checkcode,linkage,Slider,pwdstrength,offline",
-    "vinci canvas":"imageFilter,pixeler,gClip,brush"
+    "活动页面":"sws,sideNav,lineParallax,slide,datalazyload,layer-anim,autoResponsive,KOnepageScroll,stepcontrol,responsiveslide,ks-timeline,sticky,yearline,snake-slider,TimeLines,albums,NGuide,limitfixed,scrollFloat,digitalScroll",
+    "无线组件":"app,mobile-album,iscroll-lite,contacts,ringNavi,confirm,kissy-mscroller,scroll-monitor,touchCrop,slideBtn,storage,photoswipe,simple-mask,photoswipe,redirectToNative,bidi,slideBtn,WKeditor,KMobileConsole,responsiveslide,image-gesture-zoom",
+    "表单":"uploader,auth,form-storage,select,limiter,placeholder,editorUploader,radio,checkbox,Slider,spinbox,numberSpinner,cityselector,autocomplete,formValidation,validation，textMagnifier,checkcode,itemSelector,linkage,amount,pwdstrength,droplist,simulate-select,nbSelect,verify,multiellipsis,editable,offline,slideBtn,buttonCount,koo,checkit,formalize,wordcount,cn-money,DelayActivator",
+    "图片展示":"slide,responsiveslide,switchable,albums,mobile-album,spotlight,imagezoom,snake-slider,image-gesture-zoom,cutter,photoswipe,image-tagging,lightBox,image-dd,detect-zoom,galleria",
+    "框架&工具":"app,jasmine-kissy,bidi，kds，layer-anim,storage,jquery-adapter,backbone-lite,mqa,anti-ie6,velocity,tmpl,crox,SimpleTemplate,temple,pinyin,event-custom-after,oui,oop,aop,pluginhost,kcopy,addBookmark,kheatmap,HashX,sapper,hoverGetWord,hcs,next-tick,kDataGenerator,defineProperties,KissKey,autosize,Mock,kcopy,textDiff",
+    "游戏&抽奖":"catch,slot,shootGame,kThrow",
+    "动画&效果":"space,frameCartoon,KOnepageScroll,girlLink,blur,ktypewriter,snake-slider,lineParallax,digitalScroll,kThrow,scrollAnim",
+    "布局":"responsive,autoResponsive,datalazyload,NGuide,autofix,sws,fluidLayout,sticky,lineParallax,scrollFloat,limitfixed,waterfallx,affix,waterfall,galleria",
+    "菜单&树":"sideNav,stepcontrol,trees,checkBoxTree,treemenu,stepbar,smartmenu,pagesidebar,menu-aim",
+    "音视频":"musicPlayer,tb-video-player",
+    "图像处理":"kcharts,imgcrop,imageFilter,pixeler,gClip,brush,kcharts,amapUtils,imgProxy,drawingPad,touchCrop,pixeler,KOrgChart,gClip,mapLocator,reflection",
+    "弹出层&提示":"messenger,pageNotification,easydialog,rtip，powerTips,iToolTip,tip,notification,tooltip",
+    "时间":"calendar,countdown,datetimepicker,moment,simpleCountDown,spike-Timeline,real-time,ks-timeline,countdownHelper,dateCascade,yearline,TimeLines,kschedule,RichDate,calendar-deprecated,digitalScroll",
+    "排序&过滤":"filter,inputFilter,KSortTable,lap",
+    "UI":"kissy-pagination,iscroll-lite,multipage,updown,ksnote,stepcontrol,kprogress,buttonCount,page,tsearch,pagination,kscroll"
 }
