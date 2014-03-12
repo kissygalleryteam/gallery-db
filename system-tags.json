@@ -8,7 +8,7 @@
     "图片展示":"slide,responsiveslide,switchable,albums,mobile-album,spotlight,imagezoom,snake-slider,image-gesture-zoom,cutter,photoswipe,image-tagging,lightBox,image-dd,detect-zoom,galleria",
     "框架&工具":"app,jasmine-kissy,bidi，kds，layer-anim,storage,jquery-adapter,backbone-lite,mqa,anti-ie6,velocity,tmpl,crox,SimpleTemplate,temple,pinyin,event-custom-after,oui,oop,aop,pluginhost,kcopy,addBookmark,kheatmap,HashX,sapper,hoverGetWord,hcs,next-tick,kDataGenerator,defineProperties,KissKey,autosize,Mock,kcopy,textDiff",
     "游戏&抽奖":"catch,slot,shootGame,kThrow",
-    "动画&效果":"space,frameCartoon,KOnepageScroll,girlLink,blur,ktypewriter,snake-slider,lineParallax,digitalScroll,kThrow,scrollAnim",
+    "动画&效果":"space,frameCartoon,KOnepageScroll,girlLink,blur,ktypewriter,snake-slider,lineParallax,digitalScroll,kThrow,scrollAnim,hoverdir",
     "布局":"responsive,autoResponsive,datalazyload,NGuide,autofix,sws,fluidLayout,sticky,lineParallax,scrollFloat,limitfixed,waterfallx,affix,waterfall,galleria",
     "菜单&树":"sideNav,stepcontrol,trees,checkBoxTree,treemenu,stepbar,smartmenu,pagesidebar,menu-aim",
     "音视频":"musicPlayer,tb-video-player",
