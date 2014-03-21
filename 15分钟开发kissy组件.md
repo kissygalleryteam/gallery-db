@@ -197,6 +197,12 @@ demo的访问地址示例：[http://gallery.kissyui.com/slide/1.2/demo/index.htm
 
 直接登录[http://kpm.f2e.taobao.net/](http://kpm.f2e.taobao.net/)，新增组件，由管理员（剑平、拔赤、翰文）审核
 
+审核要求：
+
+* 必须有build目录
+* 组件必须是基于kissy1.4.2+
+* abc.json必须补充上cover字段（组件截图路径，大小为300*120）
+
 ### 使用kpm发布和同步文档
 
 进入[http://kpm.f2e.taobao.net/](KPM)，新增组件，或者在老的组件基础上添加github库的前缀，如下图：
