@@ -2,11 +2,12 @@
 
 ## generator-bee
 
-generator-bee是kissy简单工程构建器，强调简单和快速，没有复杂的工程分级和复杂的命令功能。
+generator-bee是kissy简单工程构建器，跟generator-xcake和generator-clam有所不同，强调简单和快速，没有复杂的目录分级和复杂的命令功能，不是以页面作为划分维度，适用于小工程构建。
 
 generator-bee遵循最新的kissy规范。
 
 阿里内部环境，使用依赖表——combo的方式，不再静态合并文件。
+
 
 [demo工程传送门](https://github.com/minghe/bee-demo)
 
