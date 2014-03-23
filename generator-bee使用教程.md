@@ -1,8 +1,6 @@
 ![http://gtms04.alicdn.com/tps/i4/T1i9hTFpBnXXcDeDnx-300-80.png](http://gtms04.alicdn.com/tps/i4/T1i9hTFpBnXXcDeDnx-300-80.png)
 
-## generator-bee
-
-generator-bee是kissy简单工程构建器，跟generator-xcake和generator-clam有所不同，强调简单和快速，没有复杂的目录分级和复杂的命令功能，不是以页面作为划分维度，适用于小工程构建。
+**generator-bee**是kissy简单工程构建器，跟generator-xcake和generator-clam有所不同，强调简单和快速，没有复杂的目录分级和复杂的命令功能，不是以页面作为划分维度，适用于小工程构建，日后会支持kissy mini工程。
 
 generator-bee遵循最新的kissy规范。
 
