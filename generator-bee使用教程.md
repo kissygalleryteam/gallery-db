@@ -63,7 +63,7 @@ generator-bee遵循最新的kissy规范，会生成demo页面和测试用例范�
 
 ## 代码规范
 
-模块文件使用[AMD规范](http://www.cnblogs.com/happyPawpaw/archive/2012/05/31/2528864.html)，不再建议基于KMD规范。
+模块文件使用CMD规范。
 
     KISSY.add(function(S, require){
 
