@@ -7,6 +7,7 @@ generator-bee 遵循最新的kissy规范，会生成demo页面和测试用例范
 阿里内部环境，使用依赖表——combo的方式，不再静态合并文件。
 
 * 作者：明河（剑平）
+* [工具库地址](https://github.com/minghe/generator-bee)
 * [demo工程传送门](https://github.com/minghe/bee-demo)
 * [反馈bug](https://github.com/minghe/generator-bee/issues)
 
