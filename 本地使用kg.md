@@ -14,7 +14,7 @@ demo
 
     npm install -g bower
 
-### 增加 .bowerrc 文件：
+## 增加 .bowerrc 文件：
 
 文件内容如下：
 
@@ -25,7 +25,7 @@ demo
     
 将bower拉取的代码到 src/kg 目录。
 
-### 增加 bower.json 文件：
+## 增加 bower.json 文件：
 
     {
         "name": "demo",
@@ -45,7 +45,7 @@ dependencies 配置上依赖的组件，格式是 "组件名": "kg/组件名"。
 
 默认拉取的组件master代码，如果需要拉取指定版本代码："reactive": "kg/reactive#publish/0.2.0"。
 
-### 在工程模块中使用组件
+## 在工程模块中使用组件
 
     KISSY.add(function(S){
         var Reactive = S.require('./kg/reactive');
