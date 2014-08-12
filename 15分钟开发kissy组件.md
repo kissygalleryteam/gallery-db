@@ -111,6 +111,18 @@ KISSY.use('gallery/slide/2.0.0/index',function (S,Slide) {
 	var a = new Slide();
 });
 ```
+
+## Step6:bower配置
+
+如果你的组件有依赖其他的gallery组件，请修改bower.json：
+
+```javascript
+    "dependencies": {
+       "reactive": "kg/reactive#publish/0.2.0"
+    }
+```
+
+
 ## Step5:打包文件
 
 假设组件已经开发完成，发布前需要打包压缩下文件，运行如下命令：
