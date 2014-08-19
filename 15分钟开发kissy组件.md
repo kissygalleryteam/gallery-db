@@ -1,6 +1,6 @@
 # 十五分钟开发一个kissy组件
 
-kpm（组件后台系统）：[http://kpm.f2e.taobao.net/](KPM)(阿里内网才能访问)，[changelog](https://github.com/kissygalleryteam/kpm/issues/238)
+kpm（组件后台系统）：[KPM](http://kpm.f2e.taobao.net/)(阿里内网才能访问)，[changelog](https://github.com/kissygalleryteam/kpm/issues/238)
 
 请先加入组件作者旺旺群：`600859238`。
 
