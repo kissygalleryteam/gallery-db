@@ -47,9 +47,7 @@ dependencies 配置上依赖的组件，格式是 "组件名": "kg/组件名"。
 
 ## 在工程模块中使用组件
 
-    KISSY.add(function(S){
-        var Reactive = S.require('./kg/reactive');
-    })
+    require('./kg/reactive');
     
 这时候组件不需要版本号了，代码打包到项目模块文件中！
     

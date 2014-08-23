@@ -6,7 +6,15 @@ kpm（组件后台系统）：[KPM](http://kpm.f2e.taobao.net/)(阿里内网才�
 
 不再使用gallery包名！使用**kg**（千克~）
 
-旧的kissy需要配置下包：
+kissy版本请使用1.4.6:
+
+````sh
+
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.6/seed-min.js" charset="utf-8"></script>
+
+````
+
+1.4.6下的kissy需要配置下包：
 
 ````sh
 
@@ -63,54 +71,68 @@ slide           // 组件目录名, 小写, 多字符用 – 分隔
 |      |---------test                        // 单元测试放的目录
 |      |---------index.js                     // 组件入口文件
 |      |-----README.md                                  	// 用于介绍组件信息和版本更新
-|      |-----gruntfile.js                                 // grunt打包时使用的配置信息
+|      |-----gulpfile.js                                 // gulp打包时使用的配置信息
 |      |-----totoro-config.js                                 // totoro回归工具配置文件
 ```
 
 ## Step4:组件的开发和调试
 
-请看**demo/index.html**
-
-配置组件路径到本地：
+模块请使用cdm规范代码：
 
 ```javascript
-var S = KISSY;S.config({
-        packages:[
-            {
-                name:"kg",
-                path:"http://g.tbcdn.cn/kg/",
-                charset:"utf-8",
-                ignorePackageNameInUri:true
-            }
-        ]
-    });
+var $ = require('node').all;
+var Base = require('base');
 
+var Demo = Base.extend({
+    initializer:function(){
+        var self = this;
+        var $target = self.get('$target');
+    }
+},{
+    ATTRS:{
+        $target:{
+            value:'',
+            getter:function(v){
+                return $(v);
+            }
+        }
+    }
+});
+
+module.exports = Demo;
+```
+
+gulp打包时自动将代码编译成带KISSY.add()包裹的代码。
+
+请看**demo/index.html**
+
+配置组件路径到本地build目录，本地开发请运行**gulp watch**，监听js改编自动编译到build目录：
+
+```javascript
+    var S = KISSY;
     if (S.Config.debug) {
-        var srcPath = "../";
+        var debugPath = "../build";
         S.config({
             packages:[
                 {
-                    name:"kg/demo/2.0.0",
-                    path:srcPath,
+                    name:"kg/demo/1.0.0",
+                    path:debugPath,
                     charset:"utf-8",
                     ignorePackageNameInUri:true
                 }
             ]
         });
-
     }
 ```
-
-ignorePackageNameInUri这个配置参数，可以不让路径带上gallery目录，这样本地就不需要创建一个gallery目录。
-
 
 组件初始化脚本demo：
 
 ```javascript
-KISSY.use('gallery/slide/2.0.0/index',function (S,Slide) {
-	var a = new Slide();
+KISSY.use('kg/demo/1.0.0/index',function (S,Demo) {
+	new Demo();
 });
 ```
+
 
 ## Step6:bower配置
 
@@ -129,10 +151,13 @@ KISSY.use('gallery/slide/2.0.0/index',function (S,Slide) {
 
 ````sh
 npm install
-grunt
 ````
 
-打包成功后，会在`build`目录下生成`index.js`和`index-min.js`，同时`css`文件、`less`和`scss`文件也会被构建。
+````sh
+gulp
+````
+
+打包成功后，会在`build`目录下生成`index.js`和`index-min.js`，同时`css`文件也会被构建。
 
 ## Step6:发布组件
 
