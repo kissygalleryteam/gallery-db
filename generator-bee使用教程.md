@@ -2,9 +2,8 @@
 
 **generator-bee**是kissy简单工程构建器，跟generator-xcake和generator-clam有所不同，强调简单和快速，没有复杂的目录分级和复杂的命令功能，不是以页面作为划分维度，适用于小工程构建，适用于kissy mini工程。
 
-generator-bee 遵循最新的kissy规范，会生成demo页面和测试用例范例，支持kissy mini。
+generator-bee 遵循最新的kissy规范，会生成demo页面和测试用例范例。
 
-阿里内部环境，使用依赖表——combo的方式，不再静态合并文件。
 
 * 作者：明河（剑平）
 * [工具库地址](https://github.com/minghe/generator-bee)
@@ -16,7 +15,7 @@ generator-bee 遵循最新的kissy规范，会生成demo页面和测试用例范
 
 安装yeoman
 
-    npm install yo grunt-cli -g
+    npm install yo gulp -g
 
 安装kissy-gallery目录生成器
 
@@ -33,11 +32,11 @@ generator-bee 遵循最新的kissy规范，会生成demo页面和测试用例范
 
 打包文件
 
-    grunt
+    gulp
 
 监听文件改变实时编译
 
-    grunt dev
+    gulp watch
 
 默认编译less和生成kissy模块名和依赖表。
 
@@ -54,7 +53,7 @@ generator-bee 遵循最新的kissy规范，会生成demo页面和测试用例范
     |      |-----test    // 测试用例目录
     |      |-----build    // 发布目录
     |      |-----README.md      // 库介绍
-    |      |-----gruntfile.js   // grunt打包时使用的配置信息
+    |      |-----gulpfile.js   // gulp打包时使用的配置信息
     |      |-----totoro-config.js       // totoro回归工具配置文件
     |      |-----package.js     // 依赖包配置
 
@@ -66,34 +65,13 @@ generator-bee 遵循最新的kissy规范，会生成demo页面和测试用例范
 
 模块文件使用CMD规范。
 
-    KISSY.add(function(S, require){
+    //初始化header模块
+    var header = require('./mods/header');
+    header.init();
+    
+    //初始化article模块
+    var article = require('./mods/article');
+    article.init();
 
-        //初始化header模块
-        var header = require('./mods/header');
-        header.init();
+使用**require()**来引用模块。运行**grunt dev**时，会自动合并和编译文件到build目录。
 
-        //初始化article模块
-        var article = require('./mods/article');
-        article.init();
-
-        return true;
-    });
-
-使用**require()**来引用模块。运行**grunt dev**时，会自动补充上模块名和依赖模块，比如：
-
-    KISSY.add('bee-demo/index',['./mods/header', './mods/article'], function(S, require){
-
-        //初始化header模块
-        var header = require('./mods/header');
-        header.init();
-
-        //初始化article模块
-        var article = require('./mods/article');
-        article.init();
-
-        return true;
-    });
-
-模块建议带有返回值。
-
-## 单元测试
