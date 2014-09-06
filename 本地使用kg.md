@@ -33,6 +33,7 @@ demo
             "**/*",
             "!index.js",
             "!index.css",
+            "!index.less",
             "!lib/**/*"
         ],
         "dependencies": {
@@ -43,7 +44,14 @@ demo
 
 dependencies 配置上依赖的组件，格式是 "组件名": "kg/组件名"。
 
-默认拉取的组件master代码，如果需要拉取指定版本代码："reactive": "kg/reactive#publish/0.2.0"。
+默认拉取的组件master代码，如果需要拉取指定版本代码："reactive": "kg/reactive#0.2.0"。
+
+bower 支持版本范围：
+
+* reactive#0.2.0
+* reactive#~0.2.0
+* reactive#^0.2.0
+* reactive#>=0.2.0<2.0.0
 
 ## 在工程模块中使用组件
 

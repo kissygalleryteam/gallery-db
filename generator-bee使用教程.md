@@ -57,10 +57,6 @@ generator-bee 遵循最新的kissy规范，会生成demo页面和测试用例范
     |      |-----totoro-config.js       // totoro回归工具配置文件
     |      |-----package.js     // 依赖包配置
 
-## 调试
-
-调试工具太多了，每个人调试习惯不同，推荐使用[httpx](https://github.com/czy88840616/httpx)。
-
 ## 代码规范
 
 模块文件使用CMD规范。
@@ -75,3 +71,18 @@ generator-bee 遵循最新的kissy规范，会生成demo页面和测试用例范
 
 使用**require()**来引用模块。运行**grunt dev**时，会自动合并和编译文件到build目录。
 
+## 工程内使用kg组件
+
+编辑bower.json：
+
+    "dependencies": {
+        "reactive": "kg/reactive#0.2.0"
+    }
+    
+格式为 kg/组件名#版本号 。
+
+然后运行bower install ，会自动拉取组件到src/kg目录。
+
+业务模块引用组件：
+
+    var Reactive = require('./kg/reactive/index');
