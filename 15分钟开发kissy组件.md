@@ -45,7 +45,7 @@ npm install generator-kpm -g
 
 ## Step2:提交组件信息
 
-进入[http://kpm.f2e.taobao.net/](KPM)，点击添加组件，填写组件信息，提交后，系统会自动在[http://gitlab.alibaba-inc.com/groups/kg](kg)中创建了组件库。
+进入[KPM](http://kpm.f2e.taobao.net/)，点击添加组件，填写组件信息，提交后，系统会自动在[kg](http://gitlab.alibaba-inc.com/groups/kg)中创建了组件库。
 
 正常的话会收到邮件通知。
 
