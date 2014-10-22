@@ -4,10 +4,12 @@
 
 generator-bee 遵循最新的kissy规范，会生成demo页面和测试用例范例。
 
+generator-bee 已经支持kissy5.0.0
 
 * 作者：明河（剑平）
 * [工具库地址](https://github.com/minghe/generator-bee)
-* [demo工程传送门](https://github.com/minghe/bee-demo)
+* [demo工程传送门 kissy1.4.7](https://github.com/minghe/bee-demo)
+* [demo工程传送门 kissy5.0.0](https://github.com/minghe/bee-kissy5-demo)
 * [反馈bug](https://github.com/minghe/generator-bee/issues)
 
 
@@ -54,7 +56,6 @@ generator-bee 遵循最新的kissy规范，会生成demo页面和测试用例范
     |      |-----build    // 发布目录
     |      |-----README.md      // 库介绍
     |      |-----gulpfile.js   // gulp打包时使用的配置信息
-    |      |-----totoro-config.js       // totoro回归工具配置文件
     |      |-----package.js     // 依赖包配置
 
 ## 代码规范
