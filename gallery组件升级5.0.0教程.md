@@ -63,14 +63,14 @@ gulp.task('default', ['kmc']);
 调试的时候，KISSY5.0.0的包配置可以参考这样
 ```
 require.config({
-                packages:[
-                    {
-                        name:"kg",
-                        path:'../',
-                        charset:"utf-8"
-                    }
-                ]
-            });
+	packages:[
+	    {
+	        name:"kg",
+	        path:'../',
+	        charset:"utf-8"
+	    }
+	]
+});
 ```
 模块的引用变成这样
 ```
@@ -79,7 +79,7 @@ require('kg/easydialog/2.5.0/index,node', function (Easydialog,Node) {
 });
 ```
 注意到，回调函数里已经没有KISSY这个变量
-然后再将package.json里的version改成5.0.0
+之后再将package.json里的version改成5.0.0
 
 ## 第五步，发布
 发布的流程和平时业务上的代码发布的操作流程一致，发布到publish/5.0.0分支即可完成
