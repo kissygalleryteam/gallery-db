@@ -9,7 +9,7 @@
 这里用到的工具是 [**kmt**](https://github.com/kissyteam/kmt)，kmt是一个将KISSY 1.4版无缝升级到KISSY 5.0的工具，无需人工改写代码就能够平滑的完成KISSY升级，安装完成之后执行命令
 
 ```
-kmt -s ./src -b ./kissy5.0_code -t cmd --charset gbk  
+kmt -s ./src -b ./src -t cmd --charset gbk  
 ```
 
 即可将src目录下的1.4组件的源码转换到kissy5.0_code目录下，更多个性化的使用请参考kmt的[文档](https://github.com/kissyteam/kmt)
@@ -24,7 +24,7 @@ var config = {
     modName: 'easydialog', // 升级的组件名
     version: '5.0.0', // 版本号，即发布的分支（约定是5.0.0）
 }
-var src = './' + config.modName + '/kissy5.0_code',
+var src = './' + config.modName + '/src',
     dest = './' + config.modName + '/build';
 kmc.config({
     // depFilePath: dest + 'mods-dep.js', //全局依赖文件关系，此处配置后下面的各个模块将不会再生成
