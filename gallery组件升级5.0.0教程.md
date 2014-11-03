@@ -83,3 +83,7 @@ require('kg/easydialog/2.5.0/index,node', function (Easydialog,Node) {
 
 ## 第五步，发布
 发布的流程和平时业务上的代码发布的操作流程一致，发布到publish/5.0.0分支即可完成
+
+
+   (**其他需要关注的地方**)
+   KISSY 5.0.0里已经没有KISSY的概念了，所以，之前有将模块名绑定到KISSY的会无效，类似于这样`KISSY.Offline`，建议取消这种使用方式，需要自己在代码中额外的处理
