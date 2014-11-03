@@ -2,7 +2,10 @@
 
 主要分为如下几个步骤
 
-## 第一步，将原有的代码转换成cmd的代码
+## 第一步，拉取代码
+在gitlab上的kg组里找到相应的组件，拉取下来，新增一个daily/5.0.0的分支(约定的版本号是5.0.0)
+
+## 第二步，将原代码转换成cmd的代码
 这里用到的工具是 [**kmt**](https://github.com/kissyteam/kmt)，kmt是一个将KISSY 1.4版无缝升级到KISSY 5.0的工具，无需人工改写代码就能够平滑的完成KISSY升级，安装完成之后执行命令
 
 ```
@@ -11,7 +14,7 @@ kmt -s ./src -b ./kissy5.0_code -t cmd --charset gbk
 
 即可将src目录下的1.4组件的源码转换到kissy5.0_code目录下，更多个性化的使用请参考kmt的[文档](https://github.com/kissyteam/kmt)
 
-## 第二步，将cmd代码打包
+## 第三步，将cmd代码打包
 这里的打包工具是基于gulp编写，依赖的模块是[gulp-kmc](https://www.npmjs.org/package/gulp-kmc)，gulpfile.js的编写参考下面
 
 ```
@@ -56,6 +59,27 @@ gulp.task('kmc', function() {
 })
 gulp.task('default', ['kmc']);
 ```
+## 第四步，更新demo以及相关配置文件
+调试的时候，KISSY5.0.0的包配置可以参考这样
+```
+require.config({
+                packages:[
+                    {
+                        name:"kg",
+                        path:'../',
+                        charset:"utf-8"
+                    }
+                ]
+            });
+```
+模块的引用变成这样
+```
+require('kg/easydialog/2.5.0/index,node', function (Easydialog,Node) {
+	
+});
+```
+注意到，回调函数里已经没有KISSY这个变量
+然后再将package.json里的version改成5.0.0
 
-## 第三步，发布
-升级的组件为了和kissy保持一致，约定的版本号是5.0.0，在gitlab上的 **kg** group上找到相应的组件，和平时业务上的代码发布的操作流程一致即可完成
+## 第五步，发布
+发布的流程和平时业务上的代码发布的操作流程一致，发布到publish/5.0.0分支即可完成
