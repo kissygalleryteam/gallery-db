@@ -21,41 +21,41 @@ kmt -s ./src -b ./kissy5.0_code -t cmd --charset gbk
 var gulp = require('gulp');
 var kmc = require('gulp-kmc');
 var config = {
-	modName:'easydialog',// 升级的组件名
-	version:'5.0.0',// 版本号，即发布的分支（约定是5.0.0）
+    modName: 'easydialog', // 升级的组件名
+    version: '5.0.0', // 版本号，即发布的分支（约定是5.0.0）
 }
-var src = './'+config.modName+'/kissy5.0_code',
-  dest = './'+config.modName+'/build';
+var src = './' + config.modName + '/kissy5.0_code',
+    dest = './' + config.modName + '/build';
 kmc.config({
-  // depFilePath: dest + 'mods-dep.js', //全局依赖文件关系，此处配置后下面的各个模块将不会再生成
-  packages: [{
-    name: 'kg/'+config.modName+'/'+config.version,
-    combine: true,
-    base: src,
-    ignorePackageNameInUri:true
-  }]
+    // depFilePath: dest + 'mods-dep.js', //全局依赖文件关系，此处配置后下面的各个模块将不会再生成
+    packages: [{
+        name: 'kg/' + config.modName + '/' + config.version,
+        combine: true,
+        base: src,
+        ignorePackageNameInUri: true
+    }]
 });
 
 gulp.task('kmc', function() {
-  gulp.src(src + "/**/*.js")
-  //转换cmd模块为kissy模块
-  .pipe(kmc.convert({
-    seajs: true,
-    minify: true, //是否压缩
-    exclude: ['tasks'], //忽略该目录
-    ignoreFiles: ['.combo.js', '-min.js'], //忽略该类文件
-  }))
-  //合并文件
-  .pipe(kmc.combo({
-    seajs: true,
-    minify: true,
-    // ext: "-min.js",
-    files: [{
-      src: src + '/index.js',
-      dest: dest + '/index.js'
-    }]
-  }))
-    .pipe(gulp.dest(dest));
+    gulp.src(src + "/**/*.js")
+    //转换cmd模块为kissy模块
+    .pipe(kmc.convert({
+        seajs: true,
+        minify: true, //是否压缩
+        exclude: ['tasks'], //忽略该目录
+        ignoreFiles: ['.combo.js', '-min.js'], //忽略该类文件
+    }))
+    //合并文件
+    .pipe(kmc.combo({
+        seajs: true,
+        minify: true,
+        // ext: "-min.js",
+        files: [{
+            src: src + '/index.js',
+            dest: dest + '/index.js'
+        }]
+    }))
+        .pipe(gulp.dest(dest));
 })
 gulp.task('default', ['kmc']);
 ```
@@ -78,7 +78,7 @@ require('kg/easydialog/2.5.0/index,node', function (Easydialog,Node) {
 	
 });
 ```
-注意到，回调函数里已经没有KISSY这个变量
+注意到，回调函数里已经没有KISSY这个变量，
 之后再将package.json里的version改成5.0.0
 
 ## 第五步，发布
