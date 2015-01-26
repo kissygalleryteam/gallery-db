@@ -84,7 +84,9 @@ module.exports = Demo;
 
     gulp
 
-会编译文件到build目录，同时会起一个本地server，http://localhost:8585/，包配置路径指向本地服务，请看**demo/index.html**。
+会编译文件到build目录，同时会起一个本地server，http://localhost:8585/
+
+包配置路径指向本地服务，请看**demo/index.html**
 
 ```javascript
     var S = KISSY;
