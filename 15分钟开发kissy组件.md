@@ -13,7 +13,7 @@ kissy版本请使用1.4.8:
 ## Step1: 安装kpm工具
 
 ````sh
-npm install yo grunt-cli -g
+npm install yo gulp -g
 ````
 
 ````sh
