@@ -22,6 +22,9 @@ npm install generator-kpm -g
 
 请确保本地带有NodeJs和Npm环境。
 
+mac下如果安装失败，可能是权限问题，请加 sudo 。
+
+
 ## Step2:提交组件信息
 
 进入[kpm后台](http://kpm.admin.taobao.net/)，点击添加组件，填写组件信息，提交后，系统会自动在[kg](http://gitlab.alibaba-inc.com/groups/kg)中创建了组件库。
